@@ -85,3 +85,20 @@ scores = model.evaluate(X_test, y_test, verbose=0)
 print("Final Error Score is : %.2f%%" % (100-scores[1]*100))
 
 ##############################################################
+
+##############################################################
+
+#test the model
+
+#TEST ON A SINGLE IMAGE
+#To view an MNIST image load the database into another set of vars
+(X1_train, y1_train), (X1_test, y1_test) = mnist.load_data()
+#to view a particular image
+plt.imshow(X1_train[129], cmap=plt.get_cmap('gray'))
+plt.show()
+#or just get the probabilities but use 784 bit vector form
+pr = model.predict(X_train[129].reshape((1, 1, 28, 28)))
+
+print(pr)
+
+##############################################################
